@@ -1,4 +1,3 @@
-```javascript
 const moodInput = document.getElementById("moodInput");
 const continueMood = document.getElementById("continueMood");
 
@@ -12,9 +11,7 @@ const artistSearch = document.getElementById("artistSearch");
 
 
 // Gå fra mood til musikvalg
-
 continueMood.addEventListener("click", () => {
-
     const mood = moodInput.value.trim();
 
     if (!mood) {
@@ -32,35 +29,26 @@ continueMood.addEventListener("click", () => {
 
 
 // Vælg flere genrer
-
 genreButtons.forEach(button => {
-
     button.addEventListener("click", () => {
         button.classList.toggle("selected");
     });
-
 });
 
 
 // Vælg flere kunstnere
-
 artistButtons.forEach(button => {
-
     button.addEventListener("click", () => {
         button.classList.toggle("selected");
     });
-
 });
 
 
 // Søg efter kunstnere
-
 artistSearch.addEventListener("input", () => {
-
     const search = artistSearch.value.toLowerCase();
 
     artistButtons.forEach(button => {
-
         const artistName = button.textContent.toLowerCase();
 
         if (artistName.includes(search)) {
@@ -68,16 +56,12 @@ artistSearch.addEventListener("input", () => {
         } else {
             button.style.display = "none";
         }
-
     });
-
 });
 
 
 // Find musik
-
 document.getElementById("findMusic").addEventListener("click", () => {
-
     const selectedGenres = [
         ...document.querySelectorAll(".option.selected")
     ].map(button => button.textContent);
@@ -89,6 +73,4 @@ document.getElementById("findMusic").addEventListener("click", () => {
     console.log("Mood:", moodInput.value);
     console.log("Genrer:", selectedGenres);
     console.log("Kunstnere:", selectedArtists);
-
 });
-```
