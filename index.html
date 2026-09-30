@@ -1,0 +1,116 @@
+```html
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoodMusic</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="app">
+
+        <!-- SIDE 1: MOOD -->
+        <section class="screen active" id="moodScreen">
+
+            <div class="hero">
+                <p class="small-title">MOODMUSIC</p>
+
+                <h1>Hvordan har du det<br>lige nu?</h1>
+
+                <p class="subtitle">
+                    Fortæl os om øjeblikket. Vi finder musikken, der passer til det.
+                </p>
+
+                <textarea
+                    id="moodInput"
+                    placeholder="Skriv hvad du føler eller hvad der sker..."
+                ></textarea>
+
+                <button class="main-button" id="continueMood">
+                    Fortsæt
+                    <span>→</span>
+                </button>
+            </div>
+
+        </section>
+
+
+        <!-- SIDE 2: MUSIKSMAG -->
+        <section class="screen" id="musicScreen">
+
+            <div class="selection-page">
+
+                <p class="small-title">DIN MUSIK</p>
+
+                <h2>Hvad vil du gerne høre?</h2>
+
+                <p class="subtitle">
+                    Vælg de genrer og kunstnere, du normalt kan lide.
+                </p>
+
+
+                <div class="selection-section">
+
+                    <h3>Genrer</h3>
+
+                    <div class="options" id="genreOptions">
+
+                        <button class="option">Rap</button>
+                        <button class="option">Pop</button>
+                        <button class="option">R&B</button>
+                        <button class="option">Indie</button>
+                        <button class="option">Rock</button>
+                        <button class="option">Elektronisk</button>
+                        <button class="option">Afro</button>
+                        <button class="option">Dansk</button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="selection-section">
+
+                    <h3>Kunstnere</h3>
+
+                    <input
+                        type="text"
+                        id="artistSearch"
+                        placeholder="Søg efter en kunstner..."
+                    >
+
+                    <div class="artist-list" id="artistList">
+
+                        <button class="artist">Gilli</button>
+                        <button class="artist">Kesi</button>
+                        <button class="artist">Branco</button>
+                        <button class="artist">Sivas</button>
+                        <button class="artist">Benny Jamz</button>
+                        <button class="artist">Jamaika</button>
+                        <button class="artist">Stepz</button>
+                        <button class="artist">Noah Carter</button>
+
+                    </div>
+
+                </div>
+
+
+                <button class="main-button" id="findMusic">
+                    Find min musik
+                    <span>✦</span>
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+```
