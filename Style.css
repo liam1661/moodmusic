@@ -1,0 +1,127 @@
+css
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: #0b0b10;
+    color: white;
+    overflow: hidden;
+}
+
+.app {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Den store, bløde baggrund */
+
+.app::before {
+    content: "";
+    position: absolute;
+    width: 650px;
+    height: 650px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(116, 82, 255, 0.25) 0%,
+        rgba(116, 82, 255, 0.08) 40%,
+        transparent 70%
+    );
+    filter: blur(30px);
+    animation: float 10s ease-in-out infinite alternate;
+}
+
+.hero {
+    width: min(800px, 90%);
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.small-title {
+    font-size: 13px;
+    letter-spacing: 5px;
+    color: #8d8d9c;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: clamp(48px, 7vw, 86px);
+    line-height: 0.98;
+    letter-spacing: -4px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.subtitle {
+    max-width: 550px;
+    margin: 0 auto 40px;
+    color: #a4a4b1;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+textarea {
+    width: 100%;
+    min-height: 150px;
+    resize: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    padding: 25px;
+    font-size: 18px;
+    outline: none;
+    backdrop-filter: blur(20px);
+    transition: 0.3s;
+}
+
+textarea::placeholder {
+    color: #666674;
+}
+
+textarea:focus {
+    border-color: rgba(150, 130, 255, 0.5);
+    background: rgba(255, 255, 255, 0.07);
+}
+
+button {
+    margin-top: 18px;
+    padding: 16px 25px;
+    border: none;
+    border-radius: 999px;
+    background: white;
+    color: #111118;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+button span {
+    margin-left: 8px;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 35px rgba(255, 255, 255, 0.12);
+}
+
+@keyframes float {
+    from {
+        transform: translate(-80px, -40px) scale(1);
+    }
+
+    to {
+        transform: translate(80px, 40px) scale(1.15);
+    }
+}
