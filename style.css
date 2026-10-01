@@ -295,3 +295,60 @@ h2 {
         margin-top: 30px;
     }
 }
+/* Hvad skal musikken gøre? */
+
+.purpose-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 35px;
+    text-align: left;
+}
+
+.purpose {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.04);
+    color: white;
+    text-align: left;
+    transition: 0.2s;
+    position: relative;
+    z-index: 20;
+}
+
+.purpose strong {
+    font-size: 17px;
+}
+
+.purpose span {
+    color: #8d8d9c;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.purpose:hover {
+    background: rgba(255, 255, 255, 0.09);
+    transform: translateY(-2px);
+}
+
+.purpose.selected {
+    background: white;
+    color: #111118;
+    border-color: white;
+}
+
+.purpose.selected span {
+    color: #55555f;
+}
+
+@media (max-width: 600px) {
+
+    .purpose-options {
+        grid-template-columns: 1fr;
+    }
+
+}

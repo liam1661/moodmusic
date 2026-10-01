@@ -60,17 +60,66 @@ artistSearch.addEventListener("input", () => {
 });
 
 
-// Find musik
-document.getElementById("findMusic").addEventListener("click", () => {
-    const selectedGenres = [
-        ...document.querySelectorAll(".option.selected")
-    ].map(button => button.textContent);
+// Gå til formålssiden
 
-    const selectedArtists = [
-        ...document.querySelectorAll(".artist.selected")
-    ].map(button => button.textContent);
+const purposeScreen = document.getElementById("purposeScreen");
+const findMusic = document.getElementById("findMusic");
+
+findMusic.addEventListener("click", () => {
+
+    musicScreen.classList.remove("active");
+    purposeScreen.classList.add("active");
+
+    window.scrollTo(0, 0);
+});
+
+
+// Vælg hvad musikken skal gøre
+
+const purposeButtons = document.querySelectorAll(".purpose");
+
+purposeButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        purposeButtons.forEach(otherButton => {
+            otherButton.classList.remove("selected");
+        });
+
+        button.classList.add("selected");
+
+    });
+
+});
+
+
+// Find musik
+
+document.getElementById("recommendMusic").addEventListener("click", () => {
+
+    const selectedPurpose = document.querySelector(".purpose.selected");
+
+    if (!selectedPurpose) {
+        return;
+    }
 
     console.log("Mood:", moodInput.value);
-    console.log("Genrer:", selectedGenres);
-    console.log("Kunstnere:", selectedArtists);
+
+    console.log(
+        "Genrer:",
+        [...document.querySelectorAll(".option.selected")]
+            .map(button => button.textContent)
+    );
+
+    console.log(
+        "Kunstnere:",
+        [...document.querySelectorAll(".artist.selected")]
+            .map(button => button.textContent)
+    );
+
+    console.log(
+        "Formål:",
+        selectedPurpose.querySelector("strong").textContent
+    );
+
 });
